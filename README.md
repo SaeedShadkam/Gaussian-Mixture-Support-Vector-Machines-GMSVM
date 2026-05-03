@@ -5,7 +5,7 @@ A hybrid machine learning model for classifying loan applicants as creditworthy 
 This repository accompanies a research paper I co-authored at Sharif University of Technology (working manuscript, not currently published).
 
 <p align="center">
-  <img src="Figs/gmsvm_overview.svg" alt="GMSVM pipeline overview" width="720">
+  <img src="Figs/GMSVM-overview.png" alt="GMSVM pipeline overview" width="720">
   <br>
   <em>Figure 1. GMSVM pipeline: feature engineering, GM-SMOTE oversampling, GMM denoising, SVM classification.</em>
 </p>
