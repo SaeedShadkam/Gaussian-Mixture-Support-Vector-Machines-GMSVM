@@ -128,37 +128,12 @@ The methods generalize beyond consumer credit. The same imbalance-and-noise prob
 
 
 
-## How to Run
-
-> The repository has been used as research code. The instructions below describe the intended workflow; adapt to the entry points in your local copy.
-
-**Requirements:** Python 3.9+, with `scikit-learn`, `numpy`, `pandas`, `matplotlib`, and `imbalanced-learn`.
-
-```bash
-# 1. Clone
-git clone https://github.com/SaeedShadkam/Gaussian-Mixture-Support-Vector-Machines-GMSVM.git
-cd Gaussian-Mixture-Support-Vector-Machines-GMSVM
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Train and evaluate GMSVM on a chosen dataset
-python src/gmsvm.py --dataset taiwanese
-python src/gmsvm.py --dataset australian
-python src/gmsvm.py --dataset japanese
-
-# 4. Reproduce benchmark comparisons
-python src/benchmarks.py --dataset taiwanese
-```
-
-Each run reports test-set Accuracy, Recall, Precision, and AUC, and writes figures to `results/`.
 
 ## Potential Extensions
 
 - **Adaptive component count.** The current implementation uses a fixed number of GMM components per class. Treating it as a tuned hyperparameter (or selecting per-class via BIC) could further improve fit on heterogeneous portfolios.
 - **Calibrated probabilities.** Convert SVM scores to calibrated default probabilities (Platt scaling, isotonic regression) so the output can feed directly into expected-loss and pricing models.
 - **Cost-sensitive learning.** Replace symmetric accuracy with an expected-loss objective that reflects the asymmetric cost of false approvals vs. false rejections.
-- **Time-aware validation.** Add walk-forward validation on the Taiwanese behavioral data to test stability under macroeconomic shifts.
 - **Explainability layer.** Pair GMSVM with SHAP or counterfactual explanations to support adverse-action notices and model risk review.
 - **Application beyond credit.** Stress-test GM-SMOTE on fraud detection, AML alert triage, and insurance claim classification, where imbalance and noise dominate.
 
